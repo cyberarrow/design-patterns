@@ -1,7 +1,7 @@
-const log = require('./Logger')
+const Logger = require('./Logger')
 
-const activite1 = new log()
-const activite2 = new log()
+const activite1 = new Logger()
+const activite2 = new Logger()
 
 activite1.createLog("S3 bucket is receiving new files")
 activite2.createLog("S3 bucket is receiving new folders")

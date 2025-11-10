@@ -1,6 +1,11 @@
-class Logger {
+class SingletonLogger {
     constructor() {
+        if(SingletonLogger.instance) {
+            return SingletonLogger.instance
+        }
+
         this.logs = []
+        SingletonLogger.instance = this
     }
 
     createLog(message) {
@@ -13,4 +18,4 @@ class Logger {
     }
 }
 
-module.exports = Logger
+module.exports = SingletonLogger
