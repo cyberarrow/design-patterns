@@ -1,5 +1,15 @@
-const Notificator = require('./src/Notificator')
+const Notificador = require('./src/Notificator');
+const NotificadorDecorator = require('./src/NotificatorDecorator');
+const SMS = require('./src/SMSDecorator');
+const Slack = require('./src/SlackDecorator');
 
-let notify = new Notificator('Mnha notificação');
 
-console.log(notify.send())
+const notificadorBase = new Notificador();
+
+const notificadorSMS = new SMS(notificadorBase)
+
+const notificadorSlack = new Slack(notificadorSMS)
+
+const notificadorSlack2 = new Slack(notificadorSlack)
+
+notificadorSlack2.send('Sistema em manutenção!')

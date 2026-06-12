@@ -1,10 +1,6 @@
 class Notificator {
-    constructor(message) {
-        this.message = message
-    }
-
-    send() {
-        return this.message
+    send(message) {
+        console.log(`Enviando mensagem via email: ${message}`)
     }
 }
 
