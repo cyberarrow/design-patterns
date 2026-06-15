@@ -1,21 +1,13 @@
-class UsersCollection {
-    constructor() {
-        this.users = [];
-    }
-
-    addUser(user) {
-        this.users.push(user)
-    }
-
-    fetchAll() {
-        for(let i = 0; i < this.users.length; i++) {
-            console.log(this.users[i])
-        }
-    }
-}
+const UsersCollection = require('./UsersCollection')
 
 const users = new UsersCollection();
 users.addUser({ name: "Jon", age: 17 })
 users.addUser({ name: "Sandor", age: 27 })
 
-users.fetchAll()
+const userIterator = users.createIterator(this.users);
+
+console.log("Iterate users: ")
+
+while(userIterator.hasNext()) {
+    console.log(userIterator.next())
+}
